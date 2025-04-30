@@ -72,6 +72,7 @@ input:focus {
     width: 100%;
     padding: 10px 15px;
     background-color: #038C4C;
+    color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
@@ -84,10 +85,7 @@ input:focus {
 .btn:hover {
     background-color: #026b3a;
 }
-.btn a{
-    color: #fff;
-    text-decoration: none;
-}
+
 .switch {
     font-size: 0.9rem;
     color: #666;
