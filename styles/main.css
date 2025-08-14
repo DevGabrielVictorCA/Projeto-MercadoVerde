@@ -17,9 +17,8 @@ body {
     line-height: 1.6;
 }
 
-h1{
-    text-align: center;
-}
+h1{ text-align: center; }
+
 h2{
     margin-top: 3em;
     text-align: center;
@@ -43,7 +42,6 @@ header {
     z-index: 2;
 }
 
-/* .logo, .search-box, .icones-header{ flex: 1; } */
 .logo .highlight {
     color: #038C4C;
     font-family: "Edu AU VIC WA NT Pre", cursive;
@@ -54,15 +52,14 @@ header {
     width: 380px;
     padding: 8px 15px;
     border-radius: 25px;
-    border: 1px solid #ddd;
+    outline: none;
+    border: 1px solid rgb(122, 118, 118);
+    transition: border-color .3s ease-in;
 }
 
-.search-hamburger{ 
-    display: none; 
-    width: 100%;
-    padding: 10px 0;
-    justify-content: center;
-    align-items: center; 
+.search-box input:focus{ 
+    border: 2px solid rgb(0, 128, 85);
+    caret-color: rgb(0, 128, 85);
 }
 
 .icones-header{
@@ -82,16 +79,14 @@ header {
     color: #333;
 }
 
-.icones-header ion-icon:hover{
-    color: rgb(0, 128, 85);
-}
+.icones-header ion-icon:hover{ color: rgb(0, 128, 85); }
 
 /* Menu */
 /* Nav Menu */
 .menu {
     position: fixed;
     overflow: hidden;
-    height: 89%;
+    height: 100%;
     top: 73px;
     width: 80px;
     background-color: white;
@@ -145,7 +140,7 @@ header {
     width: 30px;
     height: 20px;
     margin-left: 2rem;
-    cursor: poin;
+    cursor: pointer;
 }
 
 .menu-hamburger span{
@@ -159,19 +154,10 @@ header {
 .menu-hamburger:hover span,
 .menu-hamburger.open span { background-color: rgb(0, 128, 85); }
 
-.menu-hamburger span:nth-child(1){
-    top: 0px;
-}
-
+.menu-hamburger span:nth-child(1){ top: 0px; }
 .menu-hamburger span:nth-child(2),
-.menu-hamburger span:nth-child(3){
-    top: 10px;
-}
-
-
-.menu-hamburger span:nth-child(4){
-    top: 20px;
-}
+.menu-hamburger span:nth-child(3){ top: 10px; }
+.menu-hamburger span:nth-child(4){ top: 20px; }
 
 .menu-hamburger.open span:nth-child(1),
 .menu-hamburger.open span:nth-child(4){
@@ -182,6 +168,8 @@ header {
 
 .menu-hamburger.open span:nth-child(2){ transform: rotate(45deg); }
 .menu-hamburger.open span:nth-child(3){ transform: rotate(-45deg); }
+
+.icones-header-hamburger{ display: none; }
 
 .carousel {
     flex: 80%;
@@ -307,11 +295,11 @@ footer #para{
 @media (max-width: 600px) {
     .logo{ font-size: 10px; }
     .icones-header{ font-size: 35px; }
-    .icones-header a:nth-child(2){ display: none; }
+    .icones-header a{ display: none; }
 
     .menu {
         height: 100dvh;
-        top: 72px;
+        top: 9.7%;
         right: -50em;
         width: 70%;
         border-right: none;
@@ -319,7 +307,6 @@ footer #para{
     }
 
     .menu.open{ right: 0; }
-
     .menu-hamburger{ display: flex; }
 
     .menu ul{
@@ -330,6 +317,7 @@ footer #para{
     .menu ul li a{
         margin-left: 0;
         margin-right: 8px;
+        padding: 10px 20px;
     }
 
     .menu ul li a:hover{
@@ -341,23 +329,30 @@ footer #para{
     
     .menu:hover{ width: 70%; }
 
-    .search-box{ display: none; }
+    .search-box input{ 
+        display: flex;
+        width: 100%;
+        margin: 0 10%;
+    }
 
-    .search-hamburger{ 
+    .icones-header-hamburger{ 
         display: flex; 
-        justify-content: space-between;
+        position: relative;
+        justify-content: center;
         align-items: center;
         padding: 10px 5%;
     }
-    
 
-    .search-hamburger input{ 
-        position: relative;
-        width: 100%;
-        padding: 8px 15px;
-        border-radius: 25px;
-        border: 1px solid #ddd;
-        z-index: 20;
+    .icones-header-hamburger .icones-header:nth-child(1){ 
+        font-size: 60px;
+        padding: 0 20px;
+    }
+
+    .icones-header-hamburger .icones-header:nth-child(2){ 
+        font-size: 30px;
+        position: absolute;
+        top: 0;   
+        left: -10px;     
     }
 
     .produtos .cards{ margin-left: 0px; }

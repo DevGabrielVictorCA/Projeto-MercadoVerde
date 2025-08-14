@@ -14,13 +14,20 @@ function moveCarousel() {
 // Intervalo de 3 segundos para trocar o slide
 setInterval(moveCarousel, 3000);
 
-
 const hamburgerBtn = document.querySelector('.menu-hamburger');
 const menu = document.querySelector('.menu');
-hamburgerBtn.addEventListener('click', () => {
+hamburgerBtn.addEventListener('click', (e) => {
     hamburgerBtn.classList.toggle('open'); 
-    menu.classList.toggle('open')
-})
+    menu.classList.toggle('open');
+    e.stopPropagation(); 
+});
+
+document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target) && event.target !== hamburgerBtn) {
+        hamburgerBtn.classList.remove('open');
+        menu.classList.remove('open');
+    }
+});
 
 const listaMenu = document.querySelectorAll('.lista-menu');
 listaMenu.forEach((item) =>{
