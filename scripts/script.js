@@ -13,3 +13,19 @@ function moveCarousel() {
 
 // Intervalo de 3 segundos para trocar o slide
 setInterval(moveCarousel, 3000);
+
+
+const hamburgerBtn = document.querySelector('.menu-hamburger');
+const menu = document.querySelector('.menu');
+hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('open'); 
+    menu.classList.toggle('open')
+})
+
+const listaMenu = document.querySelectorAll('.lista-menu');
+listaMenu.forEach((item) =>{
+    item.addEventListener('click', function(){
+        hamburgerBtn.classList.remove('open'); 
+        menu.classList.remove('open')
+    })
+})
