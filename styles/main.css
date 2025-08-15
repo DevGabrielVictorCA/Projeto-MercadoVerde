@@ -297,11 +297,13 @@ footer #para{
     .icones-header{ font-size: 35px; }
     .icones-header a{ display: none; }
 
-    .menu {
-        height: 100dvh;
-        top: 60px;
+   .menu {
+        position: fixed;      
+        top: 60px;            
         right: -50em;
         width: 70%;
+        max-height: calc(100vh - 60px); 
+        overflow-y: auto;     
         border-right: none;
         border-left: 6px solid rgb(0, 128, 85);
     }
@@ -317,7 +319,12 @@ footer #para{
     .menu ul li a{
         margin-left: 0;
         margin-right: 8px;
-        padding: 10px 20px;
+        padding: .5em 20px;
+        font-size: 4.3vw;
+    }
+
+    .menu ul li:nth-child(1){
+        padding-top: 10%;
     }
 
     .menu ul li a:hover{
@@ -340,22 +347,28 @@ footer #para{
         position: relative;
         justify-content: center;
         align-items: center;
-        padding: 10px 5%;
+        padding: 7% 5% 0;
+        margin-right: 10px;
     }
 
     .icones-header-hamburger .icones-header:nth-child(1){ 
-        font-size: 60px;
+        font-size: 5em;
         padding: 0 20px;
+        text-align: center;
     }
 
     .icones-header-hamburger .icones-header:nth-child(2){ 
         font-size: 30px;
         position: absolute;
-        top: 0;   
+        top: 5px;   
         left: -10px;     
     }
 
     .carousel { margin-top: 60px;}
+
+    .carousel-images{
+        height: 350px;
+    }
 
     .produtos .cards{ margin-left: 0px; }
 
