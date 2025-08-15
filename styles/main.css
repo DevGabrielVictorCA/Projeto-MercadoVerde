@@ -299,7 +299,7 @@ footer #para{
 
     .menu {
         height: 100dvh;
-        top: 9.7%;
+        top: 60px;
         right: -50em;
         width: 70%;
         border-right: none;
@@ -354,6 +354,8 @@ footer #para{
         top: 0;   
         left: -10px;     
     }
+
+    .carousel { margin-top: 60px;}
 
     .produtos .cards{ margin-left: 0px; }
 
